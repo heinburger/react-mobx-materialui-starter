@@ -6,10 +6,12 @@ import MuiAppBar from '@material-ui/core/AppBar';
 import MuiToolbar from '@material-ui/core/Toolbar';
 
 const styles = theme => ({
-  position: 'absolute',
-  marginLeft: theme.drawerWidth,
-  [theme.breakpoints.up('md')]: {
-    width: `calc(100% - ${theme.drawerWidth}px)`,
+  appBar: {
+    position: 'absolute',
+    marginLeft: theme.drawerWidth,
+    [theme.breakpoints.up('md')]: {
+      width: `calc(100% - ${theme.drawerWidth}px)`,
+    },
   },
 })
 
