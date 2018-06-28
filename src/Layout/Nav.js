@@ -37,4 +37,4 @@ Nav.propTypes = {
   layout: PropTypes.object.isRequired,
 }
 
-export default inject('layout')(withStyles(styles)(observer(Nav)))
+export default withStyles(styles)(inject('layout')(observer(Nav)))

@@ -37,4 +37,4 @@ Bar.propTypes = {
   layout: PropTypes.object.isRequired,
 }
 
-export default inject('layout')(withStyles(styles, { withTheme: true })(observer(Bar)))
+export default withStyles(styles, { withTheme: true })(inject('layout')(observer(Bar)))

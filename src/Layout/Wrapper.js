@@ -29,4 +29,4 @@ Wrapper.propTypes = {
   layout: PropTypes.object.isRequired,
 };
 
-export default inject('layout')(withStyles(styles)(Wrapper));
+export default withStyles(styles)(inject('layout')(Wrapper));
