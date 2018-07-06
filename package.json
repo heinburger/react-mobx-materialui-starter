@@ -1,6 +1,6 @@
 {
   "name": "react-mobx-materialui-starter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.2.3",
@@ -10,6 +10,7 @@
     "gh-pages": "^1.2.0",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.3",
+    "mobx-react-devtools": "^5.0.1",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
@@ -21,7 +22,7 @@
     "react-test-renderer": "^16.4.1",
     "source-map-explorer": "^1.5.0"
   },
-  "homepage": "https://heinburger.github.io/translate",
+  "homepage": "https://heinburger.github.io/react-mobx-materialui-starter",
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
     "predeploy": "npm run build",

@@ -1,21 +1,22 @@
 import React from 'react';
-import { Provider } from 'mobx-react';
-import PropTypes from 'prop-types';
+import { BrowserRouter } from 'react-router-dom';
+import DevTools from 'mobx-react-devtools';
 
-import Root from './Root';
+import StoreProvider from './StoreProvider'
+import Theme from '../Theme';
+import Routes from './Routes';
 
 const App = ({ store }) => (
-  <Provider
-    history={store.history}
-    theme={store.theme}
-    layout={store.layout}
-  >
-    <Root />
-  </Provider>
+  <StoreProvider store={store}>
+    <React.Fragment>
+      <DevTools />
+      <Theme>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <Routes />
+        </BrowserRouter>
+      </Theme>
+    </React.Fragment>
+  </StoreProvider>
 );
-
-App.propTypes = {
-  store: PropTypes.object.isRequired,
-};
 
 export default App;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { inject } from 'mobx-react'
+import { inject } from 'mobx-react';
 import { withStyles } from '@material-ui/core/styles';
 import EventListener from 'react-event-listener';
 
@@ -29,4 +29,6 @@ Wrapper.propTypes = {
   layout: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(inject('layout')(Wrapper));
+export default withStyles(styles)(
+  inject('layout')(Wrapper)
+);

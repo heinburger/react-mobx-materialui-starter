@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Pin from './Pin';
+import Menu from './Menu';
+import Divider from '@material-ui/core/Divider';
 
 it('renders without crashing', () => {
-  shallow(<Pin />);
+  shallow(<Menu />);
 });

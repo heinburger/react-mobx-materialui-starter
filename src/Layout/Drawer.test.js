@@ -1,12 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Nav from './Nav';
+import Drawer from './Drawer';
 import LayoutStore from './store';
 
 it('renders without crashing', () => {
   mount(
-    <Nav layout={ new LayoutStore() }>
+    <Drawer layout={ new LayoutStore() }>
       <div>smack</div>
-    </Nav>
+    </Drawer>
   );
 });

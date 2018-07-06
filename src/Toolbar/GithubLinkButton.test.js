@@ -1,8 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import App from './App'
-import AppStore from './store';
+import GithubLinkButton from './GithubLinkButton';
 
 it('renders without crashing', () => {
-  mount(<App store={ new AppStore() } />);
+  mount(<GithubLinkButton />);
 });

@@ -1,8 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import App from './App'
-import AppStore from './store';
+import Search from './Search';
 
 it('renders without crashing', () => {
-  mount(<App store={ new AppStore() } />);
+  mount(<Search />);
 });
