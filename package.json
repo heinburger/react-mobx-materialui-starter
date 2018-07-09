@@ -2,6 +2,20 @@
   "name": "react-mobx-materialui-starter",
   "version": "0.2.0",
   "private": true,
+  "author": "Steven Hein",
+  "description": "boilerplate for react using mobx state, material-ui components, react-router, jest tests, and react-scripts",
+  "keywords": [
+    "react",
+    "material design",
+    "material-ui",
+    "mobx",
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heinburger/react-mobx-materialui-starter.git"
+  },
+  "license": "MIT",
+  "bugs": "https://github.com/heinburger/react-mobx-materialui-starter/issues",
   "dependencies": {
     "@material-ui/core": "^1.2.3",
     "@material-ui/icons": "^1.1.0",
