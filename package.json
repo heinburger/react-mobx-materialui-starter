@@ -4,12 +4,6 @@
   "private": true,
   "author": "Steven Hein",
   "description": "boilerplate for react using mobx state, material-ui components, react-router, jest tests, and react-scripts",
-  "keywords": [
-    "react",
-    "material design",
-    "material-ui",
-    "mobx",
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/heinburger/react-mobx-materialui-starter.git"
