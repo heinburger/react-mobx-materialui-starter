@@ -3,7 +3,7 @@ import { configure } from 'mobx';
 import LayoutStore from '../Layout/store';
 import ThemeStore from '../Theme/store';
 
-configure({ enforceActions: true });
+configure({ enforceActions: 'observed' });
 
 export default class AppStore {
   constructor() {

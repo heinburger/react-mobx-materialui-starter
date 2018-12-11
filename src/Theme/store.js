@@ -28,7 +28,12 @@ class ThemeStore {
 
   // COMPUTEDS..................................................................
   get currentTheme() {
-    return createMuiTheme(this.settings);
+    return createMuiTheme(Object.assign({}, this.settings, {
+      typography: {
+          useNextVariants: true,
+        },
+      })
+    );
   }
 
   // ACTIONS....................................................................

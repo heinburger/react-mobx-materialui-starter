@@ -12,7 +12,7 @@ const styles = theme => ({
 const Title = ({ classes, title }) => (
   <Typography
     className={classes.title}
-    variant='title'
+    variant='h6'
     color='inherit'
     noWrap
   >

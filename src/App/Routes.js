@@ -21,12 +21,14 @@ const Routes = ({ theme }) => (
       )
     }} />
     <Content>
-      <Route exact path='/' render={props => (
-        <div>root route</div>
-      )} />
-      <Route path='/:variable' render={props => (
-        <div>{props.match.params.variable}</div>
-      )} />
+      <React.Fragment>
+        <Route exact path='/' render={props => (
+          <div>root route</div>
+        )} />
+        <Route path='/:variable' render={props => (
+          <div>{props.match.params.variable}</div>
+        )} />
+      </React.Fragment>
     </Content>
   </Wrapper>
 );

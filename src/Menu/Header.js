@@ -37,7 +37,7 @@ const Header = ({ classes, history }) => (
   <div className={classes.drawerHeader}>
     <Typography
       className={classes.headline}
-      variant='headline'
+      variant='h5'
       noWrap
       onClick={() => history.push('/')}
     >
