@@ -1,6 +1,7 @@
 import { decorate, observable, action, computed } from 'mobx';
 
-import { getScreenWidth, setBodyColor } from '../utils/browser';
+import { getScreenWidth } from '../utils/browser';
+import { capitalize } from '../utils/text';
 
 class ViewStore {
   constructor(appStore) {
@@ -15,6 +16,10 @@ class ViewStore {
   // COMPUTEDS..................................................................
   get showTempDrawer() {
     return this.screenWidth < 960;
+  }
+
+  get title() {
+    return capitalize(this.appStore.router.pathname.split('/')[1])
   }
 
   // ACTIONS....................................................................

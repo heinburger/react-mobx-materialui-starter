@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
-import { inject } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 import { withStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
@@ -22,25 +21,20 @@ const styles = theme => ({
 });
 
 class Items extends React.Component {
-  onMenuItemClick = (path) => {
-    const { history, view } = this.props;
-    history.push(path);
-    view.closeTempDrawer();
-  }
   render() {
-    const { classes, location } = this.props;
+    const { classes, router } = this.props;
     return (
       <List className={classes.root}>
         <MenuItem
-          onClick={() => this.onMenuItemClick('/stuff')}
-          selected={location.pathname === '/stuff'}
+          onClick={() => router.goTo('/stuff')}
+          selected={router.pathname === '/stuff'}
           icon={<Inbox style={{color: colors.icons.stuff}} />}
           title={'Stuff'}
         />
         <Divider className={classes.divider} />
         <MenuItem
-          onClick={() => this.onMenuItemClick('/other')}
-          selected={location.pathname === '/other'}
+          onClick={() => router.goTo('/other')}
+          selected={router.pathname === '/other'}
           icon={<Gesture />}
           title={'More stuff'}
         />
@@ -51,11 +45,9 @@ class Items extends React.Component {
 
 Items.propTypes = {
   classes: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  view: PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(
-  withRouter(inject('view')(Items))
+  inject('router')(observer(Items))
 );

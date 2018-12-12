@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "author": "Steven Hein",
-  "description": "boilerplate for react using mobx state, material-ui components, react-router, jest tests, and react-scripts",
+  "description": "boilerplate for react using mobx state, material-ui components, jest tests, and react-scripts",
   "repository": {
     "type": "git",
     "url": "https://github.com/heinburger/react-mobx-materialui-starter.git"
@@ -16,6 +16,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "gh-pages": "^1.2.0",
+    "history": "^4.7.2",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.3",
     "mobx-react-devtools": "^6.0.3",
@@ -24,8 +25,6 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-event-listener": "^0.6.1",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "react-test-renderer": "^16.4.1",
     "source-map-explorer": "^1.5.0"

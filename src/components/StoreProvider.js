@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 const StoreProvider = ({ store, children }) => (
   <MobxProvider
     view={store.view}
+    router={store.router}
   >
     {children}
   </MobxProvider>

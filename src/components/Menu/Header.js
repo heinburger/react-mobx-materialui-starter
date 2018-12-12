@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { inject } from 'mobx-react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -33,13 +33,13 @@ const styles = theme => ({
   },
 });
 
-const Header = ({ classes, history }) => (
+const Header = ({ classes, router }) => (
   <div className={classes.drawerHeader}>
     <Typography
       className={classes.headline}
       variant='h5'
       noWrap
-      onClick={() => history.push('/')}
+      onClick={() => router.goTo('/')}
     >
       Boilerplate
     </Typography>
@@ -51,9 +51,9 @@ const Header = ({ classes, history }) => (
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(
-  withRouter(Header)
+  inject('router')(Header)
 );

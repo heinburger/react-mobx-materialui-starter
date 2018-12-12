@@ -1,19 +1,25 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import DevTools from 'mobx-react-devtools';
 
 import StoreProvider from './StoreProvider'
 import Theme from './Theme';
-import Routes from './Routes';
+import Toolbar from './Toolbar';
+import Menu from './Menu';
+import { Wrapper, DrawerSwitcher, Bar, Content } from './Layout';
+import Body from './Body';
 
 const App = ({ store }) => (
   <StoreProvider store={store}>
     <>
-      <DevTools />
+      {process.env !== 'production' && <DevTools />}
       <Theme>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <Routes />
-        </BrowserRouter>
+        <Wrapper>
+          <Bar><Toolbar /></Bar>
+          <DrawerSwitcher><Menu /></DrawerSwitcher>
+          <Content>
+            <Body />
+          </Content>
+        </Wrapper>
       </Theme>
     </>
   </StoreProvider>

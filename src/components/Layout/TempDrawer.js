@@ -4,15 +4,13 @@ import { observer, inject } from 'mobx-react';
 import { withStyles } from '@material-ui/core/styles';
 import MuiDrawer from '@material-ui/core/Drawer';
 
-import Menu from '../Menu'
-
 const styles = theme => ({
   drawerPaper: {
     width: theme.drawerWidth,
   },
 });
 
-const TempDrawer = ({ view, classes }) => (
+const TempDrawer = ({ view, classes, children }) => (
   <MuiDrawer
     variant='temporary'
     anchor='left'
@@ -25,13 +23,14 @@ const TempDrawer = ({ view, classes }) => (
       keepMounted: true, // Better open performance on mobile.
     }}
   >
-    <Menu />
+    {children}
   </MuiDrawer>
 )
 
 TempDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
   view: PropTypes.object.isRequired,
+  children: PropTypes.element.isRequired,
 }
 
 export default withStyles(styles)(
