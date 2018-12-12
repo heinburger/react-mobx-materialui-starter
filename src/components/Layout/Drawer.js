@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import MuiDrawer from '@material-ui/core/Drawer';
 
+import Menu from '../Menu'
+
 const styles = theme => ({
   drawerPaper: {
     width: theme.drawerWidth,
@@ -10,7 +12,7 @@ const styles = theme => ({
   },
 });
 
-const Drawer = ({ classes, children }) => (
+const Drawer = ({ classes }) => (
   <MuiDrawer
     variant='permanent'
     anchor='left'
@@ -18,12 +20,11 @@ const Drawer = ({ classes, children }) => (
       paper: classes.drawerPaper,
     }}
   >
-    {children}
+    <Menu />
   </MuiDrawer>
 )
 
 Drawer.propTypes = {
-  children: PropTypes.element.isRequired,
   classes: PropTypes.object.isRequired,
 }
 

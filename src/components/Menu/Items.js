@@ -56,6 +56,6 @@ Items.propTypes = {
   view: PropTypes.object.isRequired,
 }
 
-export default withRouter(withStyles(styles)(
-  inject('view')(Items)
-));
+export default withStyles(styles)(
+  withRouter(inject('view')(Items))
+);

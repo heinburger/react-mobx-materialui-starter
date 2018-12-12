@@ -2,9 +2,6 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import { Wrapper, DrawerSwitcher, Bar, Content } from './Layout';
-import Toolbar from './Toolbar';
-import Menu from './Menu';
-import { colors } from '../utils/theme';
 
 const Routes = () => (
   <Wrapper>
@@ -13,10 +10,8 @@ const Routes = () => (
       const routeName = routePieces[routePieces.length - 1];
       return (
         <>
-          <Bar color={colors.routes[routeName]}>
-            <Toolbar routeName={routeName} />
-          </Bar>
-          <DrawerSwitcher><Menu /></DrawerSwitcher>
+          <Bar routeName={routeName} />
+          <DrawerSwitcher />
         </>
       )
     }} />

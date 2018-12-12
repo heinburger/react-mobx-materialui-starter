@@ -4,6 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import MuiAppBar from '@material-ui/core/AppBar';
 import MuiToolbar from '@material-ui/core/Toolbar';
 
+import { colors } from '../../utils/theme';
+import Toolbar from '../Toolbar';
+
 const styles = theme => ({
   appBar: {
     right: 0,
@@ -15,19 +18,20 @@ const styles = theme => ({
   },
 });
 
-const Bar = ({ classes, children }) => (
+const Bar = ({ classes, routeName }) => (
   <MuiAppBar
     className={classes.appBar}
+    style={{ color: colors.routes[routeName] }}
   >
     <MuiToolbar>
-      {children}
+      <Toolbar routeName={routeName} />
     </MuiToolbar>
   </MuiAppBar>
 );
 
 Bar.propTypes = {
-  children: PropTypes.element.isRequired,
   classes: PropTypes.object.isRequired,
+  routeName: PropTypes.string,
 };
 
 export default withStyles(styles)(Bar);
