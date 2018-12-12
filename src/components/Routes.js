@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import { Wrapper, Drawer, Bar, Content } from './Layout';
+import { Wrapper, DrawerSwitcher, Bar, Content } from './Layout';
 import Toolbar from './Toolbar';
 import Menu from './Menu';
 import { colors } from '../utils/theme';
@@ -16,7 +16,7 @@ const Routes = () => (
           <Bar color={colors.routes[routeName]}>
             <Toolbar routeName={routeName} />
           </Bar>
-          <Drawer><Menu /></Drawer>
+          <DrawerSwitcher><Menu /></DrawerSwitcher>
         </>
       )
     }} />

@@ -1,30 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { observer, inject } from 'mobx-react';
 import { withStyles } from '@material-ui/core/styles';
 import MuiDrawer from '@material-ui/core/Drawer';
 
 const styles = theme => ({
   drawerPaper: {
     width: theme.drawerWidth,
-    position: 'relative',
   },
 });
 
-const Drawer = ({ classes, children }) => (
+const TempDrawer = ({ view, classes, children }) => (
   <MuiDrawer
-    variant='permanent'
+    variant='temporary'
     anchor='left'
+    open={view.tempDrawerOpen}
+    onClose={view.toggleTempDrawer}
     classes={{
       paper: classes.drawerPaper,
+    }}
+    ModalProps={{
+      keepMounted: true, // Better open performance on mobile.
     }}
   >
     {children}
   </MuiDrawer>
 )
 
-Drawer.propTypes = {
+TempDrawer.propTypes = {
   children: PropTypes.element.isRequired,
   classes: PropTypes.object.isRequired,
+  view: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(Drawer);
+export default withStyles(styles)(
+  inject('view')(observer(TempDrawer))
+);

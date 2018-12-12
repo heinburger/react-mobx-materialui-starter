@@ -9,13 +9,12 @@ class ViewStore {
 
   // OBSERVABLES................................................................
   tempDrawerOpen = false;
-  shouldHidePermDrawer = false;
   screenWidth = getScreenWidth();
   lightThemeActive = true;
 
   // COMPUTEDS..................................................................
   get showTempDrawer() {
-    return this.screenWidth <= 960 || this.shouldHidePermDrawer;
+    return this.screenWidth < 960;
   }
 
   // ACTIONS....................................................................
@@ -38,12 +37,13 @@ class ViewStore {
 
 decorate(ViewStore, {
   tempDrawerOpen: observable,
-  shouldHidePermDrawer: observable,
   screenWidth: observable,
+  lightThemeActive: observable,
   showTempDrawer: computed,
   onScreenResize: action,
   toggleTempDrawer: action,
   closeTempDrawer: action,
+  toggleLightTheme: action,
 });
 
 export default ViewStore;

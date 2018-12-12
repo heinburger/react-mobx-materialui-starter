@@ -50,4 +50,4 @@ Search.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(observer(Search));
+export default withStyles(styles)(Search);
