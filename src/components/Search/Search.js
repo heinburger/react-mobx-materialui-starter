@@ -1,8 +1,7 @@
 import React from 'react';
-import { observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search'
+import SearchIcon from '@material-ui/icons/Search';
 
 const styles = theme => ({
   container: {

@@ -5,11 +5,13 @@ import { observer, inject } from 'mobx-react';
 import Drawer from './Drawer';
 import TempDrawer from './TempDrawer';
 
-const DrawerSwitcher = ({ view, children }) => {
-  return view.showTempDrawer
-    ? <TempDrawer>{children}</TempDrawer>
-    : <Drawer>{children}</Drawer>;
-};
+const DrawerSwitcher = ({ view, children }) => (
+  <>
+    {view.showTempDrawer
+      ? <TempDrawer>{children}</TempDrawer>
+      : <Drawer>{children}</Drawer>}
+  </>
+);
 
 DrawerSwitcher.propTypes = {
   children: PropTypes.element.isRequired,
