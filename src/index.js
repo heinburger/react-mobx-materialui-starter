@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css';
-import App from './App';
-import AppStore from './App/store';
+import App from './components/App';
+import AppStore from './stores/AppStore';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
