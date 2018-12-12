@@ -10,29 +10,32 @@ const styles = theme => ({
   },
 });
 
-const TempDrawer = ({ view, classes, children }) => (
+const StyledMuiDrawer = withStyles(styles)(({ classes, ...rest }) => (
   <MuiDrawer
     variant='temporary'
     anchor='left'
-    open={view.tempDrawerOpen}
-    onClose={view.toggleTempDrawer}
     classes={{
       paper: classes.drawerPaper,
     }}
     ModalProps={{
       keepMounted: true, // Better open performance on mobile.
     }}
+    {...rest}
+  />
+));
+
+const TempDrawer = ({ view, children }) => (
+  <StyledMuiDrawer
+    open={view.tempDrawerOpen}
+    onClose={view.toggleTempDrawer}
   >
     {children}
-  </MuiDrawer>
+  </StyledMuiDrawer>
 )
 
 TempDrawer.propTypes = {
-  classes: PropTypes.object.isRequired,
   view: PropTypes.object.isRequired,
   children: PropTypes.element.isRequired,
 }
 
-export default withStyles(styles)(
-  inject('view')(observer(TempDrawer))
-);
+export default inject('view')(observer(TempDrawer));

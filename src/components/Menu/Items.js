@@ -11,7 +11,7 @@ import { colors } from '../../utils/theme'
 import MenuItem from './Item';
 
 const styles = theme => ({
-  root: {
+  list: {
     width: '100%',
     paddingBottom: `${theme.spacing.unit * 8}px`,
   },
@@ -20,34 +20,34 @@ const styles = theme => ({
   },
 });
 
-class Items extends React.Component {
-  render() {
-    const { classes, router } = this.props;
-    return (
-      <List className={classes.root}>
-        <MenuItem
-          onClick={() => router.goTo('/stuff')}
-          selected={router.pathname === '/stuff'}
-          icon={<Inbox style={{color: colors.icons.stuff}} />}
-          title={'Stuff'}
-        />
-        <Divider className={classes.divider} />
-        <MenuItem
-          onClick={() => router.goTo('/other')}
-          selected={router.pathname === '/other'}
-          icon={<Gesture />}
-          title={'More stuff'}
-        />
-      </List>
-    );
-  }
-}
+const StyledList = withStyles(styles)(({ classes, ...rest }) => (
+  <List className={classes.list} {...rest} />
+));
+
+const StyledDivider = withStyles(styles)(({ classes, ...rest }) => (
+  <Divider className={classes.divider} {...rest} />
+));
+
+const Items = ({ router }) => (
+  <StyledList>
+    <MenuItem
+      onClick={() => router.goTo('/stuff')}
+      selected={router.pathname === '/stuff'}
+      icon={<Inbox style={{color: colors.icons.stuff}} />}
+      title={'Stuff'}
+    />
+    <StyledDivider />
+    <MenuItem
+      onClick={() => router.goTo('/other')}
+      selected={router.pathname === '/other'}
+      icon={<Gesture />}
+      title={'More stuff'}
+    />
+  </StyledList>
+);
 
 Items.propTypes = {
-  classes: PropTypes.object.isRequired,
   router: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(
-  inject('router')(observer(Items))
-);
+export default inject('router')(observer(Items));

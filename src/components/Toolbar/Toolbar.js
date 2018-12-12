@@ -13,7 +13,7 @@ const Toolbar = ({ view }) => (
     {view.showTempDrawer
       ? <ToggleDrawerButton />
       : <React.Fragment />}
-    <Title />
+    <Title title={view.title} />
     <Search />
     <ToggleLightThemeButton />
     <GithubLinkButton />

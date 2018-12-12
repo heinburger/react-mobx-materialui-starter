@@ -1,8 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Body from './Body';
 import RouterStore from '../../stores/RouterStore'
+import AppStore from '../../stores/AppStore'
 
 it('renders without crashing', () => {
-  mount(<Body router={ new RouterStore() } />);
+  shallow(<Body router={ new RouterStore(new AppStore()) } />);
 });

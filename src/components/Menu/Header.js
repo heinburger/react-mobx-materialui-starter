@@ -54,6 +54,4 @@ Header.propTypes = {
   router: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(
-  inject('router')(Header)
-);
+export default withStyles(styles)(inject('router')(Header));

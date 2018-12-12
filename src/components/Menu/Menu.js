@@ -4,11 +4,11 @@ import Header from './Header';
 import Items from './Items';
 
 const Menu = () => (
-  <React.Fragment>
+  <>
     <Header />
     <Divider />
     <Items />
-  </React.Fragment>
+  </>
 );
 
 export default Menu;

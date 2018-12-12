@@ -16,19 +16,20 @@ const styles = theme => ({
   },
 });
 
-const Wrapper = ({ classes, children, view }) => (
-  <div className={classes.wrapper}>
+const StyledWrapper = withStyles(styles)(({ classes, ...rest }) => (
+  <div className={classes.wrapper} {...rest} />
+));
+
+const Wrapper = ({ children, view }) => (
+  <StyledWrapper>
     {children}
     <EventListener target='window' onResize={view.onScreenResize} />
-  </div>
+  </StyledWrapper>
 );
 
 Wrapper.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
-  classes: PropTypes.object.isRequired,
   view: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(
-  inject('view')(Wrapper)
-);
+export default inject('view')(Wrapper);

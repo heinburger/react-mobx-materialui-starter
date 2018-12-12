@@ -7,6 +7,7 @@ class RouterStore {
     this.history = createHistory({
       basename: process.env.PUBLIC_URL,
     });
+    this.setPathname(this.history.location.pathname)
     this.history.listen((location, action) => {
       this.setPathname(location.pathname);
       console.log(`The last navigation action was ${action}`)
