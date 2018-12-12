@@ -1,6 +1,13 @@
 {
-  "main.css": "static/css/main.a936552e.css",
-  "main.css.map": "static/css/main.a936552e.css.map",
-  "main.js": "static/js/main.eda8ce54.js",
-  "main.js.map": "static/js/main.eda8ce54.js.map"
+  "main.js": "/react-mobx-materialui-starter/static/js/main.9ca38cf0.chunk.js",
+  "main.js.map": "/react-mobx-materialui-starter/static/js/main.9ca38cf0.chunk.js.map",
+  "static/css/1.a6af650c.chunk.css": "/react-mobx-materialui-starter/static/css/1.a6af650c.chunk.css",
+  "static/js/1.d5893411.chunk.js": "/react-mobx-materialui-starter/static/js/1.d5893411.chunk.js",
+  "static/js/1.d5893411.chunk.js.map": "/react-mobx-materialui-starter/static/js/1.d5893411.chunk.js.map",
+  "runtime~main.js": "/react-mobx-materialui-starter/static/js/runtime~main.b06fa7a3.js",
+  "runtime~main.js.map": "/react-mobx-materialui-starter/static/js/runtime~main.b06fa7a3.js.map",
+  "static/css/1.a6af650c.chunk.css.map": "/react-mobx-materialui-starter/static/css/1.a6af650c.chunk.css.map",
+  "index.html": "/react-mobx-materialui-starter/index.html",
+  "precache-manifest.33d7af617585a8919beda4b8f483b0a2.js": "/react-mobx-materialui-starter/precache-manifest.33d7af617585a8919beda4b8f483b0a2.js",
+  "service-worker.js": "/react-mobx-materialui-starter/service-worker.js"
 }
