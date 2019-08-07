@@ -10,7 +10,7 @@ class RouterStore {
     this.setPathname(this.history.location.pathname)
     this.history.listen((location, action) => {
       this.setPathname(location.pathname);
-      console.log(`The last navigation action was ${action}`)
+      console.log(`The last navigation action was ${location.pathname} (via ${action})`)
     });
   }
 
